@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 
-  
+
 
   Future<void> _pickImage() async {
     final ImagePicker picker = ImagePicker();
@@ -115,23 +115,23 @@ _showSnackbar("Data send to live server", Colors.green);
     
 
 
-    // var url = Uri.parse('https://yourserver.com/endpoint');
-    // var response = await http.post(
-    //   url,
-    //   body: json.encode({
-    //     'textData': textData,
-    //     'imageData': imageData,
-    //   }),
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // );
+    var url = Uri.parse('https://yourserver.com/endpoint');
+    var response = await http.post(
+      url,
+      body: json.encode({
+        'textData': textData,
+        'imageData': imageData,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    );
 
-    // if (response.statusCode == 200) {
-    //   _showSnackbar("Data pushed successfully", Colors.green);
-    // } else {
-    //   _showSnackbar("Failed to push data: Status Code - \${response.statusCode}", Colors.red);
-    // }
+    if (response.statusCode == 200) {
+      _showSnackbar("Data pushed successfully", Colors.green);
+    } else {
+      _showSnackbar("Failed to push data: Status Code - \${response.statusCode}", Colors.red);
+    }
   }
 
   @override
