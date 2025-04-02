@@ -46,6 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+
+  
+
   Future<void> _pickImage() async {
     final ImagePicker picker = ImagePicker();
     final XFile? pickedFile = await picker.pickImage(source: ImageSource.gallery);
